@@ -12,6 +12,12 @@ namespace Kata20170904_CamelCaseMethod
             CameCaseShouldBe("Ab", "ab");
         }
 
+        [TestMethod]
+        public void input_bc_should_return_Bc()
+        {
+            CameCaseShouldBe("Bc", "bc");
+        }
+
         private static void CameCaseShouldBe(string expected, string str)
         {
             var problem = new Problem();
@@ -24,7 +30,9 @@ namespace Kata20170904_CamelCaseMethod
     {
         public string CameCase(string str)
         {
-            return "Ab";
+            var charArray = str.ToCharArray();
+            charArray[0] = char.ToUpper(charArray[0]);
+            return string.Concat(charArray);
         }
     }
 }
