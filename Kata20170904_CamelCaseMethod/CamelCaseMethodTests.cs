@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -44,15 +45,9 @@ namespace Kata20170904_CamelCaseMethod
     {
         public string CameCase(string str)
         {
-            var result = new StringBuilder();
-            str.Split(new []{' '}, StringSplitOptions.RemoveEmptyEntries)
-                .Select(a => a.Trim().ToCharArray()).ToList().ForEach(s =>
-            {
-                s[0] = char.ToUpper(s[0]);
-                result.Append(string.Concat(s));
-            });
+            var newStr = str.Split(' ').Select(a => CultureInfo.CurrentCulture.TextInfo.ToTitleCase(a));
 
-            return result.ToString();
+            return string.Concat(newStr);
         }
     }
 }
