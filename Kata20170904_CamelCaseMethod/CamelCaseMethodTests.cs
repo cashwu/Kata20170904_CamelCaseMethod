@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Kata20170904_CamelCaseMethod
 {
     [TestClass]
-    public class UnitTest1
+    public class CamelCaseMethodTests
     {
         [TestMethod]
         public void TestMethod1()
